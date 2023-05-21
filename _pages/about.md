@@ -1,0 +1,10 @@
+---
+permalink: /
+title: "Youthy's Personal Info"
+excerpt: "About me"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
+(under construction)
