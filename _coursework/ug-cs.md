@@ -10,7 +10,7 @@ location: "Shenzhen, China"
 
 This page collects notebooks of almost all computer science courses taken by Youthy, during his undergraduate period in mainland China.
 
-* [Basic Programming Languages](./CS_note1_programming_languages.pdf)
+* [Basic Programming Languages](../files/CS_note1_programming_languages.pdf)
 	- Course Codes: CSC-1001, CSC-1002
 	- Instructors: Prof. Junhua Zhao (Python), Prof. Rui Huang (Cpp), CUHKSz
 	- Contents:
