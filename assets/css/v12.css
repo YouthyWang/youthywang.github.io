@@ -1,0 +1,18 @@
+/* V12 review: center portrait with respect to the FULL portrait panel.
+   V11 used CSS grid's implicit min-content column, which shrank the
+   avatar-chamber to 292px and left it aligned against the panel's start.
+   Do not alter hero columns, text, portrait dimensions, or the easter egg. */
+.avatar-lab.refined-visual {
+  grid-template-columns: minmax(0, 1fr);
+}
+.avatar-lab.refined-visual .avatar-chamber {
+  width: 100%;
+  min-width: 0;
+  justify-self: stretch;
+  align-self: stretch;
+  grid-template-columns: minmax(0, 1fr);
+}
+.avatar-lab.refined-visual .avatar-toggle {
+  justify-self: center;
+  align-self: center;
+}

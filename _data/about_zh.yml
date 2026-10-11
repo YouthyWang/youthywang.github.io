@@ -1,0 +1,70 @@
+# 中文 About page content. Edit wording here; do not change the key names.
+page_title: 王俣哲 — 个人主页
+navigation:
+  about: 关于
+  blog: 随笔
+  vibe: 氛围编程
+  wordmark_label: YW — 返回首页
+  language_label: 选择语言
+  skip: 跳转到正文
+hero:
+  eyebrow: 一方私人角落
+  eyebrow_sub: — 互联网中的一册开放笔记
+  name: 王俣哲
+  intro_label: 关于我
+  intro: 这里会留出一段关于研究与兴趣的简短介绍。其余空间则用来记录想法、随笔和探索。
+  social_label: 联系 / 其他平台
+  portrait_accessible_name: 头像
+social:
+  email: 电子邮箱
+  github: GitHub 代码仓库
+  twitter: X / Twitter
+  zhihu: 知乎
+  linkedin: 领英
+  orcid: ORCID
+  orcid_pending: ORCID — 待补充个人主页
+  cv: 履历
+  cv_title: 个人履历
+research:
+  rail: 01 / 研究与问题
+  overline: 我所思考的问题
+  title: 研究兴趣
+  aside:
+    - 给仍在成形的研究问题
+    - 留一点空间。
+  topics:
+    - 因果推断
+    - 优化方法
+    - 统计理论
+publications:
+  rail: 02 / 学术成果
+  overline: 研究记录
+  title: 精选论文与预印本
+  aside:
+    - 留给已经发表或公开的
+    - 研究工作。
+  index: 论文索引
+  placeholder_title: 为今后的论文成果预留的空间。
+  placeholder_details: 发表后将在这里列出题目、作者、期刊与链接。
+explore:
+  rail: 03 / 书桌之外
+  overline: 论文之外的零散小事
+  title: 随笔与实验
+  blog:
+    index: 01 / 科研与生活
+    first_line: the
+    second_line: blog.
+    description: 科研、写作与生活的随笔（英文内容）。
+    cta: 打开随笔本
+  vibe:
+    index: 02 / 一个代码初学者的尝试
+    first_line: vibe
+    second_line: coding.
+    description: 一个 AI 编程学习者的小实验（英文内容）。
+    cta: 探索实验室
+  whisper: 问题   ✳   方法   ✳   写点代码   ✳   继续学习
+footer:
+  greeting: 沿途收集一些问题与想法
+  back_top: 回到顶部 ↑
+  name: 王俣哲
+  coordinate: 南极洲 / 互联网的一角

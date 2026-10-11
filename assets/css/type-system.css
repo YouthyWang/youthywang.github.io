@@ -1,0 +1,148 @@
+/* V6 — restrained English lettering, NOT a change to the V4 layout. */
+/* Alex Brush is the only English signature face; a generic script is the fallback. */
+:root {
+  --yw-english-signature: "Alex Brush", cursive;
+  --yw-chinese-signature: "Zhi Mang Xing", "Xingkai SC", "STXingkai", cursive;
+  --yw-chinese-xingkai: "Xingkai SC", "STXingkai", "华文行楷", "LXGW WenKai", "Kaiti SC", serif;
+}
+.hero-name-title {
+  font-family: var(--yw-english-signature);
+  font-size: clamp(72px, 6.5vw, 96px);
+  line-height: 1.44;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -.015em;
+  font-kerning: normal;
+  font-synthesis: none;
+  text-transform: none;
+  white-space: nowrap;
+}
+/* A true brush-style running script for the Chinese *name*, distinct from the body. */
+html[lang="zh-CN"] .hero-name-title {
+  font-family: var(--yw-chinese-signature);
+  font-size: clamp(67px, 6.7vw, 94px);
+  line-height: 1.35;
+  letter-spacing: .10em;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  white-space: nowrap;
+}
+/* Text everywhere else in the Chinese UI: Xingkai SC where installed, with a
+   distinctly declared remote WenKai fallback. WenKai is NOT a true Xingkai:
+   users wanting identical output across platforms need a licensed Xingkai webfont. */
+html[lang="zh-CN"] {
+  --font-sans: var(--yw-chinese-xingkai);
+  --font-body: var(--yw-chinese-xingkai);
+  --font-serif: var(--yw-chinese-xingkai);
+  --font-elegant: var(--yw-chinese-xingkai);
+  --font-mono: var(--yw-chinese-xingkai);
+}
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] :is(
+  .main-nav a, .hero-eyebrow, .hero-intro, .intro-label, .social-label,
+  .academic-heading h2, .academic-heading h2 em, .academic-aside,
+  .interest-card h3, .publication-copy p, .publication-copy span,
+  .section-rail .eyebrow, .tiny-overline,
+  .jump-section .section-heading h2, .feature-card h3, .feature-card h3 em,
+  .feature-card p, .feature-card .feature-index, .feature-foot,
+  .inner-intro h1, .inner-intro h1 em, .inner-intro p, .intro-side p,
+  .blog-intro h1, .vibe-hero h1, .vibe-deck,
+  .journal-heading h2, .post-entry h3, .post-entry p, .post-type,
+  .post-date, .experiment-heading h2, .experiment-info h3,
+  .experiment-info p, .lab-button, .footer-greeting,
+  .footer-name, .footer-coordinate, .back-top,
+  .archive-topline, .drawer-title, .drawer-title small,
+  .cv-label, .cv-detail, .visual-inscription .inscription-title,
+  .visual-inscription .inscription-sub,
+  .visual-corner, .visual-bottom, .eyebrow, .journal-end,
+  .publication-index, .count-label
+) {
+  font-family: var(--yw-chinese-xingkai);
+  font-synthesis: none;
+}
+/* Protect the invariant bilingual logomark and the language buttons. */
+html[lang="zh-CN"] .wordmark-monogram {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+html[lang="zh-CN"] .language-switch button {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+html[lang="zh-CN"] .hero-name-title {
+  font-family: var(--yw-chinese-signature);
+}
+/* More room for the taller extenders of true script fonts. */
+.name-composition { padding: 0 7px 8px 2px; }
+@media(max-width:920px) {
+  .hero-name-title {font-size:clamp(64px,9vw,86px)}
+}
+@media(max-width:680px) {
+  .hero-name-title {font-size:clamp(48px,10.2vw,69px);white-space:nowrap;line-height:1.42}
+  html[lang="zh-CN"] .hero-name-title {font-size:clamp(55px,11.3vw,77px);letter-spacing:.07em}
+  html[lang="zh-CN"] :is(.academic-heading h2,.journal-heading h2,.blog-intro h1,.vibe-hero h1) {letter-spacing:0}
+}
+@media(max-width:380px) {
+  .hero-name-title{font-size:clamp(43px,10vw,54px)}
+  html[lang="zh-CN"] .hero-name-title{font-size:52px}
+}
+
+/* V7 — concept only: light editorial studio. Dark is still the default. */
+html[data-theme="light"] {
+  --bg:#f8f7f1;--surface:#f1efe6;--surface2:#e7e5d9;
+  --ink:#272923;--muted:#64685d;--line:rgba(43,46,36,.21);
+  --lime:#71874d;--coral:#9e7842;--purple:#927344;--blue:#746f5c;
+  --grain-opacity:.035;
+  color-scheme:light;
+}
+html[data-theme="light"] body {background-image:radial-gradient(ellipse 50% 30% at 96% 6%,rgba(199,171,116,.10),transparent 85%)}
+html[data-theme="light"] .grain{opacity:.028}
+html[data-theme="light"] .refined-hero .hero-eyebrow{color:#77786b}
+html[data-theme="light"] .hero-name-title{color:#36443b;text-shadow:none}
+html[data-theme="light"] .refined-hero .hero-intro{color:#596056}
+html[data-theme="light"] .intro-label{color:#976e34}
+html[data-theme="light"] .hero-intro-space{border-left-color:rgba(163,129,70,.62)}
+html[data-theme="light"] .wordmark-monogram{color:#272923}
+html[data-theme="light"] .language-switch button[aria-pressed="true"]{background:#293b34;color:#f7f5eb}
+html[data-theme="light"] .language-switch button:not([aria-pressed="true"]){color:#454941}
+html[data-theme="light"] .main-nav a[aria-current="page"]:after{background:#987342}
+html[data-theme="light"] .social-links a{color:#3e493d;border-color:rgba(62,76,62,.24)}
+html[data-theme="light"] .social-links a:hover{background:#eae8dd;border-color:#8b965c}
+html[data-theme="light"] .orcid-icon{color:#56734b}
+html[data-theme="light"] .refined-visual{
+ background:radial-gradient(ellipse at 52% 46%,#ebebde 0%,#e0e4d9 42%,#d3dbcF 100%);
+ border-color:rgba(65,83,68,.24);box-shadow:20px 28px 48px rgba(49,65,52,.07)}
+html[data-theme="light"] .refined-visual:after{border-color:rgba(90,108,83,.13)}
+html[data-theme="light"] .refined-visual .visual-orbit{border-color:rgba(75,91,70,.25)}
+html[data-theme="light"] .visual-corner,html[data-theme="light"] .refined-visual .corner-tr{color:#697665}
+html[data-theme="light"] .refined-visual .inscription-title{color:#3c5043}
+html[data-theme="light"] .refined-visual .inscription-sub{color:#6b7b69}
+html[data-theme="light"] .refined-visual .visual-bottom{color:#667963}
+html[data-theme="light"] .academic-aside,html[data-theme="light"] .publication-copy span{color:#677064}
+html[data-theme="light"] .interest-card,html[data-theme="light"] .interest-card:nth-child(2),html[data-theme="light"] .interest-card:nth-child(3){
+ background:linear-gradient(146deg,#f9f8f1,#ecefe6);border-color:rgba(68,88,63,.22);box-shadow:0 3px 18px rgba(45,54,43,.025)}
+html[data-theme="light"] .interest-card:nth-child(2){background:linear-gradient(135deg,#f4f1e7,#ebe9dc)}
+html[data-theme="light"] .interest-card h3{color:#334337}
+html[data-theme="light"] .interest-number{color:#927443}
+html[data-theme="light"] .publication-placeholder{border-color:rgba(43,46,36,.22)}
+html[data-theme="light"] .feature-blog,html[data-theme="light"] .feature-vibe{
+ background:linear-gradient(146deg,#eff1e8,#e4e9dd);border-color:rgba(69,91,70,.22);color:#334539}
+html[data-theme="light"] .feature-vibe{background:linear-gradient(140deg,#f2ede1,#ede7d9)}
+html[data-theme="light"] .feature-card h3 em,html[data-theme="light"] .feature-foot{color:#405342}
+html[data-theme="light"] .feature-card p{color:#636d63}
+html[data-theme="light"] .feature-glyph{color:rgba(105,131,92,.16)}
+html[data-theme="light"] .feature-blob i{background:#a49b79;opacity:.22}
+html[data-theme="light"] .search-wrap{background:#f1efe6}
+html[data-theme="light"] .post-entry:hover{background:#efeee5}
+html[data-theme="light"] .post-entry h3{color:#304236}
+html[data-theme="light"] .post-date,html[data-theme="light"] .post-entry p{color:#6a6c5d}
+html[data-theme="light"] .experiment{background:#f4f2e9}
+html[data-theme="light"] .experiment-walk .experiment-demo{background:#d7ddcb}
+html[data-theme="light"] .experiment-gridlab .experiment-demo{background:#e8d6b4}
+html[data-theme="light"] .lab-button{background:#70854d;color:#ffffff}
+html[data-theme="light"] .ghost-button{background:transparent;color:#313b30;border:1px solid #8a9880}
+html[data-theme="light"] .experiment-info p{color:#6c6f61}
+html[data-theme="light"] .inner-intro h1{color:#2c3d33}
+html[data-theme="light"] .vibe-asterisk{color:#a78a54}
+html[data-theme="light"] .site-footer{border-color:var(--line)}
+html[data-theme="light"] .footer-greeting{color:#394338}
+html[data-theme="light"] .grain{mix-blend-mode:multiply}

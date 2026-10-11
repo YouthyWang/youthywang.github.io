@@ -1,0 +1,6 @@
+---
+layout: studio
+---
+<section class="reading-intro inner-intro"><div class="eyebrow"><span class="tiny-square"></span> NOTES / {{ page.date | date: '%Y' }}</div><a class="reading-back" href="{{ '/blog/' | relative_url }}">← All notes</a><h1>{{ page.title | escape }}</h1><div class="reading-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>{% for tag in page.tags %}<span class="reading-tag">{{ tag | escape }}</span>{% endfor %}</div></section>
+<div class="reading-layout"><aside class="reading-rail"><span>FROM THE NOTEBOOK</span><span class="reading-rail-number">{{ page.date | date: '%Y' }}</span><a href="{{ '/blog/' | relative_url }}">← INDEX</a></aside><article class="prose-content post-prose" id="article-content">{{ content }}</article></div>
+<div class="reading-after"><a href="{{ '/blog/' | relative_url }}">← Back to all notes</a><span>THANKS FOR READING ✳</span></div>

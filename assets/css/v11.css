@@ -1,0 +1,31 @@
+/* V11 review: make the portrait chamber appropriately compact, preserve the V8 hero grid. */
+@media(min-width:1101px){
+  .refined-hero .avatar-lab.refined-visual {
+    width: min(83%, 475px);
+    max-width: 475px;
+    justify-self:end;
+    min-height: 437px;
+    max-height: 437px;
+    padding: 17px;
+  }
+  .avatar-lab .avatar-image-frame {width: 292px; height: 292px;}
+  .avatar-lab .avatar-orbit {width: 338px; height: 338px;}
+  .avatar-lab .avatar-orbit-b {width: 379px; height: 379px;}
+}
+@media(min-width:681px) and (max-width:1100px){
+  .avatar-lab.refined-visual {width:min(100%, 465px);min-height:435px;max-height:435px;}
+}
+/* Improve reading and click target behavior for source Markdown notes. */
+.course-prose > p:first-child {font-size:1.05em; line-height:1.85; color:var(--ink);}
+.course-prose > ul {list-style:none;padding-left:0;margin-top:38px;}
+.course-prose > ul > li {margin:0 0 25px;padding:24px 0 28px;border-top:1px solid var(--line);}
+.course-prose > ul > li:last-child {border-bottom:1px solid var(--line);}
+.course-prose > ul > li > a:first-child {font-size:1.18em;font-weight:600;text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:5px;}
+.course-prose > ul > li > ul {margin-top:18px;}
+.course-prose ul ul li {margin:8px 0;}
+.course-prose ol {margin-top:12px;padding-left:26px;}
+.course-prose ol li {margin:4px 0;}
+@media(max-width:680px){
+  .avatar-lab.refined-visual {width:100%;}
+  .course-prose > ul > li {padding:19px 0 22px;}
+}

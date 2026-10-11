@@ -1,0 +1,22 @@
+# Single source for scholarly works on both English and Chinese About pages.
+# Add ONE entry per public paper, newest / most important first. No HTML edits needed.
+# Both About languages render the same bibliographic data; only headings are translated.
+# Full examples and field descriptions: PUBLICATIONS_GUIDE_CN.md
+#
+# Example (remove # on every field below and delete `items: []` when adding an item):
+# items:
+#   - title: "An Example Paper Title"
+#     authors: "Author One, Youthy WANG, Author Three"
+#     year: 2026
+#     venue: "Journal / Conference / arXiv"
+#     status: "Preprint"
+#     links:
+#       - label: "PDF"
+#         url: "/files/example-paper.pdf"
+#       - label: "arXiv"
+#         url: "https://arxiv.org/abs/0000.00000"
+#       - label: "Code"
+#         url: "https://github.com/YouthyWang/repository"
+#
+# `items: []` deliberately shows the empty-state message until your first public work.
+items: []

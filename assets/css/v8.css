@@ -1,0 +1,72 @@
+/* V8 – restrained photo edition, browser-native controls. */
+:root { --yw-english-signature:'Alex Brush',cursive; }
+.hero-name-title{font-family:'Alex Brush',cursive!important;letter-spacing:.005em; font-size:clamp(69px,6.6vw,100px); line-height:1.36; font-weight:400;}
+html[lang="zh-CN"] .hero-name-title{font-family:'Zhi Mang Xing','Xingkai SC','STXingkai',cursive!important;}
+.theme-toggle{display:grid!important;place-items:center;width:38px;height:38px;padding:7px;margin:0 7px 0 0;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s}
+.theme-toggle:hover,.theme-toggle:focus-visible{background:var(--surface2);border-color:var(--coral)}
+.theme-toggle .theme-icon{width:21px;height:21px;transition:transform .3s}
+.theme-toggle.is-dark .theme-icon{transform:rotate(45deg)}
+.header-tools{gap:7px!important;display:flex;align-items:center}
+html[lang="zh-CN"] body.page-about .main-nav{display:none!important}
+html[lang="zh-CN"] body.page-about .header-tools{margin-left:auto}
+html[data-theme="light"] .theme-toggle{color:#354338;border-color:#bdc4b5}
+html[data-theme="dark"] .theme-toggle{color:#f3e5c9;border-color:#54554d}
+/* Light and dark maintain the same layout; photo roll replaces the generative sketch. */
+.photo-gallery.refined-visual{
+  position:relative; display:flex; flex-direction:column; justify-content:space-between;
+  min-height:470px;max-height:470px;margin-top:0;padding:25px 24px 22px;
+  overflow:hidden; isolation:isolate;
+  border:1px solid var(--line);border-radius:12px 52px 12px 48px;
+  background:linear-gradient(145deg,#eeeae1,#e1e5d8);
+  box-shadow:12px 18px 32px rgba(42,55,42,.06); transform:none
+}
+.photo-gallery.refined-visual::before,.photo-gallery.refined-visual::after{display:none}
+html[data-theme="dark"] .photo-gallery.refined-visual{background:linear-gradient(145deg,#222923,#101615);box-shadow:none;border-color:rgba(236,218,173,.20)}
+html[data-theme="light"] .photo-gallery.refined-visual{background:linear-gradient(145deg,#eeeae1,#e1e5d8)!important}
+.photo-gallery-top{display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:4}
+.photo-gallery-top span{font:500 9px/1.2 'DM Mono',monospace;letter-spacing:.08em;color:var(--muted)}
+.photo-demo{opacity:.7}
+.photo-stage{position:relative;flex:1;margin-top:11px;min-height:290px}
+.photo-print{cursor:pointer; position:absolute; width:56%;height:265px;left:22%;top:8%;padding:9px 9px 32px;display:flex; flex-direction:column; align-items:stretch; gap:0; border:1px solid #d1ccbf; background:#fdfbf5; border-radius:3px; box-shadow:0 10px 26px rgba(33,42,30,.20); outline-offset:5px; transition:transform .42s cubic-bezier(.2,.6,.2,1),opacity .42s,filter .42s; overflow:hidden; transform-origin:bottom center}
+.photo-print img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:saturate(.75)}
+.photo-print .photo-stamp{font:9px 'DM Mono',monospace;letter-spacing:.05em;color:#575a4f;align-self:center;margin-top:11px;flex-shrink:0}
+.photo-print.is-current{z-index:3;transform:translate(0,0) rotate(-4deg);opacity:1}
+.photo-print.is-next{z-index:2;transform:translate(65px,24px) rotate(10deg) scale(.88);opacity:.93}
+.photo-print.is-prev{z-index:1;transform:translate(-68px,31px) rotate(-15deg) scale(.87);opacity:.84;filter:brightness(.94)}
+.photo-print.is-current:hover{transform:translate(0,-5px) rotate(-2deg)}
+.photo-gallery-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;z-index:4;border-top:1px solid var(--line);padding-top:15px}
+.photo-text{display:grid;gap:5px;max-width:74%}
+.photo-counter{font:10px 'DM Mono',monospace;letter-spacing:.1em;color:var(--coral)}
+.photo-caption-title{font:500 19px 'Cormorant Garamond',Georgia,serif;color:var(--ink);line-height:1.1}
+.photo-caption-sub{font:10px/1.5 'DM Sans',sans-serif;color:var(--muted)}
+.photo-controls{display:flex;gap:6px;flex-shrink:0}
+.photo-controls button{height:33px;width:33px;border-radius:50%;border:1px solid var(--line);color:var(--ink);background:transparent;font-size:17px;cursor:pointer}
+.photo-controls button:hover,.photo-controls button:focus-visible{background:var(--surface2);border-color:var(--coral)}
+html[lang="zh-CN"] .photo-caption-title,html[lang="zh-CN"] .photo-eyebrow,html[lang="zh-CN"] .photo-demo,html[lang="zh-CN"] .photo-caption-sub{font-family:var(--yw-chinese-xingkai)}
+html[lang="zh-CN"] .photo-caption-title{font-size:21px}
+@media(max-width:1100px){.photo-gallery.refined-visual{width:min(570px,100%);margin:auto;max-height:none}}
+@media(max-width:680px){
+  .theme-toggle{width:32px;height:32px;padding:6px;margin-right:1px}.theme-toggle .theme-icon{width:17px;height:17px}
+  .header-tools{gap:2px!important}.language-switch button{min-width:28px}
+  .photo-gallery.refined-visual{height:405px;min-height:405px;max-height:405px;padding:19px 16px 19px;border-radius:12px 42px 12px 36px}
+  .photo-stage{min-height:263px}
+  .photo-print{height:240px;padding:7px 7px 30px;width:60%;left:20%;top:4%}
+  .photo-print.is-next{transform:translate(51px,21px) rotate(10deg) scale(.88)}
+  .photo-print.is-prev{transform:translate(-51px,21px) rotate(-13deg) scale(.86)}
+  .photo-gallery-top span{font-size:8px}.photo-caption-sub{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.photo-print{transition:none}}
+
+html[data-theme="light"] .theme-moon,html[data-theme="dark"] .theme-sun{display:none}
+@media(max-width:680px){
+  .refined-hero{grid-template-columns:minmax(0,1fr)!important}
+  .refined-hero .hero-copy,.refined-hero .refined-visual{min-width:0;max-width:100%}
+  .hero-name-title{white-space:normal!important;font-size:clamp(47px,12vw,59px)!important;overflow-wrap:normal;line-height:1.15}
+  html[lang="zh-CN"] .hero-name-title{font-size:clamp(53px,12vw,72px)!important;line-height:1.35}
+}
+/* The script font must never leak into the EN/中 control itself. */
+.language-switch button[data-lang="zh"],
+html[lang="zh-CN"] .language-switch button[data-lang="zh"]{
+  font-family:'Noto Sans CJK SC','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif!important;
+  font-weight:600;
+}

@@ -1,0 +1,33 @@
+/* V15: publications use one YAML data source and the established V8 visual language. */
+.publication-count-line {
+  display: flex; align-items: baseline; gap: 0; margin: 0;
+  color: var(--muted); font: 11px/1.6 var(--font-body); letter-spacing: .065em;
+}
+.publication-count-number { color: var(--muted); }
+.publication-list { margin-top: 12px; border-top: 1px solid var(--line); }
+.publication-entry {
+  display: grid; grid-template-columns: minmax(95px, 210px) minmax(0, 1fr);
+  gap: 30px; padding: 27px 5px 30px; border-bottom: 1px solid var(--line);
+}
+.publication-entry .publication-left { padding-top: 7px; }
+.publication-entry .publication-index { font-size: 11px; color: var(--muted); }
+.publication-entry .publication-copy { min-width: 0; }
+.publication-work-title {
+  font: 500 clamp(20px, 2.2vw, 27px)/1.32 var(--font-body) !important;
+  color: var(--ink); margin: 0 0 12px; letter-spacing: -.02em;
+}
+.publication-entry .publication-copy .publication-authors {
+  font: 14px/1.6 var(--font-body) !important; color: var(--ink); margin: 0 0 7px;
+}
+.publication-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; color: var(--muted); font: 13px/1.5 var(--font-body); }
+.publication-status { border: 1px solid var(--line); padding: 3px 9px; border-radius: 16px; white-space: nowrap; }
+.publication-links { display: flex; flex-wrap: wrap; gap: 9px 17px; margin-top: 14px; }
+.publication-links a { font: 13px/1.5 var(--font-body); color: var(--ink); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.publication-links a:hover, .publication-links a:focus-visible { color: var(--coral); }
+.publication-links a span { margin-left: 2px; }
+/* The original empty-state remains exactly the same two-column layout. */
+@media(max-width:680px) {
+  .publication-entry { grid-template-columns: 1fr; gap: 5px; padding: 22px 4px 26px; }
+  .publication-entry .publication-left { padding-top: 0; }
+  .publication-work-title { margin-top: 8px; }
+}

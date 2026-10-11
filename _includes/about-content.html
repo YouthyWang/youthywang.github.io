@@ -1,0 +1,89 @@
+{% assign a = site.data.about_en %}
+<section class="hero refined-hero" aria-label="Introduction">
+  <div class="hero-copy">
+    <div class="eyebrow hero-eyebrow"><span class="live-dot"></span> <span data-i18n="hero.eyebrow">{{ a.hero.eyebrow | escape }}</span> <span class="eyebrow-index" data-i18n="hero.eyebrow_sub">{{ a.hero.eyebrow_sub | escape }}</span></div>
+    <div class="name-composition"><h1 class="hero-name-title" data-i18n="hero.name">{{ a.hero.name | escape }}</h1></div>
+    <div class="hero-intro-space">
+      <span class="intro-label"><span data-i18n="hero.intro_label">{{ a.hero.intro_label | escape }}</span> <span>↘</span></span>
+      <p class="hero-intro" data-i18n="hero.intro">{{ a.hero.intro | escape }}</p>
+    </div>
+    <div class="social-line" aria-label="Social and contact links">
+      <span class="social-label" data-i18n="hero.social_label">{{ a.hero.social_label | escape }}</span>
+      <div class="social-links">
+        <a href="mailto:{{ site.author.email | escape }}" data-i18n-aria-label="social.email" data-i18n-title="social.email" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
+        <a href="https://github.com/{{ site.author.github | escape }}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="social.github" data-i18n-title="social.github" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.1a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6A4.5 4.5 0 0 0 18.5 6a4.2 4.2 0 0 0-.1-3s-1.2-.1-3.5 1.8a12 12 0 0 0-6.8 0C5.8 2.9 4.6 3 4.6 3a4.2 4.2 0 0 0-.1 3A4.5 4.5 0 0 0 3.3 9.6c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg></a>
+        <a class="social-x" href="https://x.com/{{ site.author.twitter | escape }}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="social.twitter" data-i18n-title="social.twitter" aria-label="X / Twitter" title="X / Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3 20 21M20 3 4 21M4 3h5l11 18h-5L4 3z"/></svg></a>
+        <a class="social-zh" href="{{ site.author.zhihu | default: 'https://www.zhihu.com/' | escape }}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="social.zhihu" data-i18n-title="social.zhihu" aria-label="知乎" title="知乎" hidden><span class="zh-icon" aria-hidden="true">知</span></a>
+        <a href="https://www.linkedin.com/in/{{ site.author.linkedin | escape }}" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="social.linkedin" data-i18n-title="social.linkedin" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10v7M7.5 7v.1M12 17v-7m0 3c0-4.2 6-4.1 6 0v4"/></svg></a>
+        {% assign orcid_url = site.author.orcid | default: 'https://orcid.org/' %}
+        <a class="orcid-icon" href="{{ orcid_url | escape }}" target="_blank" rel="noopener noreferrer" {% if site.author.orcid %}data-i18n-aria-label="social.orcid" data-i18n-title="social.orcid" aria-label="ORCID" title="ORCID"{% else %}data-i18n-aria-label="social.orcid_pending" data-i18n-title="social.orcid_pending" aria-label="ORCID — add your profile URL" title="ORCID — add your profile URL"{% endif %}><span class="orcid-symbol" aria-hidden="true">iD</span></a>
+        <a class="cv-icon" href="{{ '/cv/' | relative_url }}" data-i18n-aria-label="social.cv_title" data-i18n-title="social.cv_title" aria-label="CV" title="Curriculum vitae"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2.5h7l4 4v15H7a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2Z"/><path d="M14 2.5v5h4M8 12h7M8 16h6"/></svg><span data-i18n="social.cv">{{ a.social.cv | escape }}</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual refined-visual avatar-lab" role="group" data-i18n-aria-label="hero.portrait_accessible_name" aria-label="Portrait">
+    <div class="avatar-chamber"><div class="avatar-orbit avatar-orbit-a" aria-hidden="true"></div><div class="avatar-orbit avatar-orbit-b" aria-hidden="true"></div>
+      <button class="avatar-toggle" id="avatar-toggle" type="button" data-i18n-aria-label="hero.portrait_accessible_name" aria-label="Portrait" title="">
+        <span class="avatar-image-frame"><img class="avatar-illustration" src="{{ '/images/yw_avatar_illustration.png' | relative_url }}" alt="" loading="eager"><img class="avatar-original" src="{{ '/images/yw_fig1.jpg' | relative_url }}" alt="" loading="eager"><span class="avatar-scan" aria-hidden="true"></span></span>
+      </button>
+    </div>
+  </div>
+</section>
+<section class="academic-section" aria-labelledby="interests-heading">
+  <div class="section-rail"><span class="eyebrow" data-i18n="research.rail">{{ a.research.rail | escape }}</span><span class="rail-arrow">✳</span></div>
+  <div class="academic-heading"><div><span class="tiny-overline" data-i18n="research.overline">{{ a.research.overline | escape }}</span><h2 id="interests-heading" data-i18n="research.title">{{ a.research.title | escape }}</h2></div><div class="academic-aside"><span data-i18n="research.aside.0">{{ a.research.aside[0] | escape }}</span><br><span data-i18n="research.aside.1">{{ a.research.aside[1] | escape }}</span></div></div>
+  <div class="interest-grid">{% for topic in a.research.topics %}
+    <article class="interest-card interest-{% cycle 'one', 'two', 'three' %}"><span class="interest-number">{% case forloop.index %}{% when 1 %}I /{% when 2 %}II /{% when 3 %}III /{% endcase %}</span><h3 data-i18n="research.topics.{{ forloop.index0 }}">{{ topic | escape }}</h3></article>{% endfor %}
+  </div>
+</section>
+<section class="academic-section publication-section" aria-labelledby="publications-heading">
+  <div class="section-rail"><span class="eyebrow" data-i18n="publications.rail">{{ a.publications.rail | escape }}</span><span class="rail-arrow">↘</span></div>
+  <div class="academic-heading publication-heading"><div><span class="tiny-overline" data-i18n="publications.overline">{{ a.publications.overline | escape }}</span><h2 id="publications-heading" data-i18n="publications.title">{{ a.publications.title | escape }}</h2></div><div class="academic-aside"><span data-i18n="publications.aside.0">{{ a.publications.aside[0] | escape }}</span><br><span data-i18n="publications.aside.1">{{ a.publications.aside[1] | escape }}</span></div></div>
+  {% assign publications = site.data.publications.items %}
+  {% assign publication_count = publications | size %}
+  {% if publication_count > 0 %}
+  <div class="publication-count-line"><span data-i18n="publications.index">{{ a.publications.index | escape }}</span><span class="publication-count-number"> / {% if publication_count < 10 %}0{% endif %}{{ publication_count }}</span></div>
+  <div class="publication-list">
+    {% for work in publications %}
+    <article class="publication-entry">
+      <div class="publication-left">
+        <span class="publication-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }} / {% if work.year %}{{ work.year | escape }}{% else %}—{% endif %}</span>
+      </div>
+      <div class="publication-copy">
+        <h3 class="publication-work-title">{{ work.title | escape }}</h3>
+        {% if work.authors %}<p class="publication-authors">{{ work.authors | escape }}</p>{% endif %}
+        {% if work.venue or work.status %}
+        <div class="publication-meta">
+          {% if work.venue %}<span class="publication-venue">{{ work.venue | escape }}</span>{% endif %}
+          {% if work.status %}<span class="publication-status">{{ work.status | escape }}</span>{% endif %}
+        </div>
+        {% endif %}
+        {% if work.links and work.links.size > 0 %}
+        <div class="publication-links">
+          {% for link in work.links %}
+            {% assign link_first = link.url | slice: 0, 1 %}
+            {% if link_first == '/' %}
+              <a href="{{ link.url | relative_url | escape }}">{{ link.label | escape }} <span aria-hidden="true">↗</span></a>
+            {% else %}
+              <a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label | escape }} <span aria-hidden="true">↗</span></a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="publication-placeholder"><div class="publication-left"><span class="publication-index"><span data-i18n="publications.index">{{ a.publications.index | escape }}</span> / 00</span></div><div class="publication-copy"><p data-i18n="publications.placeholder_title">{{ a.publications.placeholder_title | escape }}</p><span data-i18n="publications.placeholder_details">{{ a.publications.placeholder_details | escape }}</span></div></div>
+  {% endif %}
+</section>
+<section class="jump-section" aria-labelledby="explore-title">
+  <div class="section-rail"><span class="eyebrow" data-i18n="explore.rail">{{ a.explore.rail | escape }}</span><span class="rail-arrow">↓</span></div>
+  <div class="section-heading" id="explore-title"><span data-i18n="explore.overline">{{ a.explore.overline | escape }}</span><h2 data-i18n="explore.title">{{ a.explore.title | escape }}</h2></div>
+  <div class="feature-grid">
+    <a class="feature-card feature-blog tilt-card" href="{{ '/blog/' | relative_url }}"><span class="feature-index" data-i18n="explore.blog.index">{{ a.explore.blog.index | escape }}</span><div class="feature-main"><span class="feature-glyph feature-glyph-blog" aria-hidden="true">“</span><h3><span data-i18n="explore.blog.first_line">{{ a.explore.blog.first_line | escape }}</span><br><em data-i18n="explore.blog.second_line">{{ a.explore.blog.second_line | escape }}</em></h3><p data-i18n="explore.blog.description">{{ a.explore.blog.description | escape }}</p></div><span class="feature-foot"><span data-i18n="explore.blog.cta">{{ a.explore.blog.cta | escape }}</span> <span>↗</span></span></a>
+    <a class="feature-card feature-vibe tilt-card" href="{{ '/vibe-coding/' | relative_url }}"><span class="feature-index" data-i18n="explore.vibe.index">{{ a.explore.vibe.index | escape }}</span><div class="feature-main"><span class="feature-blob" aria-hidden="true"><i></i><i></i><i></i></span><h3><span data-i18n="explore.vibe.first_line">{{ a.explore.vibe.first_line | escape }}</span><br><em data-i18n="explore.vibe.second_line">{{ a.explore.vibe.second_line | escape }}</em></h3><p data-i18n="explore.vibe.description">{{ a.explore.vibe.description | escape }}</p></div><span class="feature-foot"><span data-i18n="explore.vibe.cta">{{ a.explore.vibe.cta | escape }}</span> <span>↗</span></span></a>
+  </div>
+</section>
+<div class="horizontal-whisper" aria-hidden="true"><span data-i18n="explore.whisper">{{ a.explore.whisper | escape }}</span></div>

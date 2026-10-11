@@ -1,0 +1,13 @@
+---
+layout: studio
+permalink: /archive/
+title: Coursework Notes
+nav: archive
+---
+<section class="inner-intro attic-intro"><div class="eyebrow"><span class="tiny-square"></span> THE BACK SHELF / UNIVERSITY NOTES</div><div class="inner-title-grid"><h1>Coursework Notes</h1><div class="intro-side"><p>Undergraduate notebooks and course material. Kept off the main navigation, but available to anyone who finds the archive through the blog.</p></div></div></section>
+<section class="course-card-list" aria-label="Coursework categories">
+{% assign course_notes = site.coursework | sort: 'order' %}
+{% for note in course_notes %}
+<a class="course-card" href="{{ note.url | relative_url }}"><span class="course-card-number">{{ forloop.index | prepend: '0' }} / {{ note.display_title | default: note.title | remove: 'Undergraduate Courses -- ' | upcase | escape }}</span><span class="course-card-symbol" aria-hidden="true">{{ note.card_symbol | default: '✳' }}</span><h2>{{ note.display_title | default: note.title | remove: 'Undergraduate Courses -- ' | escape }}</h2><p>{{ note.card_description | default: note.excerpt | strip_html | truncate: 115 }}</p><span class="course-card-foot">OPEN NOTES <span aria-hidden="true">↗</span></span></a>
+{% endfor %}
+</section>

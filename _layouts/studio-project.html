@@ -1,0 +1,34 @@
+---
+layout: studio
+---
+<section class="reading-intro inner-intro vibe-project-intro">
+  <div class="eyebrow"><span class="tiny-square"></span> VIBE CODING / PROJECT NOTE</div>
+  <a class="reading-back" href="{{ '/vibe-coding/' | relative_url }}">← All projects</a>
+  <h1>{{ page.title | escape }}</h1>
+  {% if page.summary %}<p class="reading-subtitle">{{ page.summary | escape }}</p>{% endif %}
+  <div class="reading-meta">
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+    {% if page.status %}<span class="reading-tag">{{ page.status | escape }}</span>{% endif %}
+    {% for tech in page.tech %}<span class="reading-tag">{{ tech | escape }}</span>{% endfor %}
+  </div>
+  {% if page.demo_url or page.github_url %}
+  <div class="project-detail-actions">
+    {% if page.demo_url %}<a href="{{ page.demo_url | escape }}" target="_blank" rel="noopener noreferrer">Live demo ↗</a>{% endif %}
+    {% if page.github_url %}<a href="{{ page.github_url | escape }}" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>{% endif %}
+  </div>
+  {% endif %}
+</section>
+{% if page.image %}
+  <figure class="project-detail-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
+  </figure>
+{% endif %}
+<div class="reading-layout">
+  <aside class="reading-rail">
+    <span>FROM THE LAB</span>
+    <span class="reading-rail-number">{{ page.date | date: '%Y' }}</span>
+    <a href="{{ '/vibe-coding/' | relative_url }}">← PROJECTS</a>
+  </aside>
+  <article class="prose-content project-prose" id="project-content">{{ content }}</article>
+</div>
+<div class="reading-after"><a href="{{ '/vibe-coding/' | relative_url }}">← Back to Vibe Coding</a><span>STILL EXPERIMENTING ✳</span></div>

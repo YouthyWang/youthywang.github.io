@@ -1,0 +1,66 @@
+title: Youthy WANG | A personal corner
+description: Thoughts on research, life, and making things.
+name: Youthy WANG
+# GA4 measurement ID. Tracked once per rendered page via _layouts/studio.html.
+google_analytics_id: G-CV39T447Y2
+url: https://youthywang.github.io
+baseurl: ''
+timezone: America/Chicago
+future: false
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+permalink: /posts/:year/:month/:title/
+plugins:
+- jekyll-feed
+- jekyll-sitemap
+- jekyll-redirect-from
+collections:
+  coursework:
+    output: true
+    permalink: /coursework/:name/
+  vibe_projects:
+    output: true
+    permalink: /vibe-coding/:name/
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: studio-post
+- scope:
+    path: ''
+    type: coursework
+  values:
+    layout: studio-coursework
+- scope:
+    path: ''
+    type: vibe_projects
+  values:
+    layout: studio-project
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: studio
+include:
+- _pages
+exclude:
+- README.md
+- node_modules
+- vendor
+- site-source
+- preview
+- screenshots
+- build_preview.py
+author:
+  name: Youthy WANG
+  email: youthywyz@gmail.com
+  github: YouthyWang
+  twitter: WYouthy
+  linkedin: youthy-wang-12484b20b/
+  orcid: 'https://orcid.org/0009-0005-9692-5378' # full URL: https://orcid.org/xxxx-xxxx-xxxx-xxxx
+  zhihu: 'https://www.zhihu.com/people/wyzmike' # full personal profile URL; until provided, icon links to the Zhihu homepage

@@ -1,0 +1,59 @@
+---
+layout: studio
+permalink: /vibe-coding/
+title: Vibe coding
+nav: vibe
+---
+<section class="inner-intro vibe-intro"><div class="eyebrow"><span class="tiny-square"></span> AI CODING LEARNER / 03</div><div class="vibe-hero"><div><h1>Vibe Coding</h1><p class="vibe-deck">Small experiments by an AI coding learner. A place to test ideas, build little things, and learn through trying.</p></div></div></section>
+{%- assign studio_projects = site.vibe_projects | sort: 'date' | reverse -%}
+<section class="vibe-projects" aria-labelledby="vibe-projects-heading">
+  <div class="experiment-heading vibe-projects-heading">
+    <h2 id="vibe-projects-heading">Projects <span class="vibe-project-count">{{ studio_projects.size }}</span></h2>
+    <span>LEARNING IN PUBLIC / CODE & IDEAS</span>
+  </div>
+  {% if studio_projects.size > 0 %}
+    <div class="vibe-project-grid">
+      {% for project in studio_projects %}
+      <article class="vibe-project-card">
+        <a class="vibe-project-cover" href="{{ project.url | relative_url }}" aria-label="Read about {{ project.title | escape }}">
+          {% if project.image %}
+            <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.title | escape }}" loading="lazy">
+          {% else %}
+            <span class="vibe-cover-symbol" aria-hidden="true">✳</span>
+          {% endif %}
+        </a>
+        <div class="vibe-project-body">
+          <div class="vibe-project-metadata">
+            <time datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: '%b %Y' }}</time>
+            {% if project.status %}<span class="vibe-project-status">{{ project.status | escape }}</span>{% endif %}
+          </div>
+          <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
+          <p>{{ project.summary | default: project.excerpt | strip_html | truncate: 200 | escape }}</p>
+          {% if project.tech %}
+          <div class="vibe-project-tags" aria-label="Technologies">
+            {% for tech in project.tech %}<span>{{ tech | escape }}</span>{% endfor %}
+          </div>
+          {% endif %}
+          <div class="vibe-project-links">
+            <a href="{{ project.url | relative_url }}">Read more ↗</a>
+            {% if project.demo_url %}<a href="{{ project.demo_url | escape }}" rel="noopener noreferrer" target="_blank">Live demo ↗</a>{% endif %}
+            {% if project.github_url %}<a href="{{ project.github_url | escape }}" rel="noopener noreferrer" target="_blank">Source ↗</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="vibe-project-empty">
+      <span class="vibe-project-empty-mark" aria-hidden="true">✳</span>
+      <p>New experiments will appear here as I build and learn.</p>
+    </div>
+  {% endif %}
+</section>
+
+<section class="experiment-section" aria-labelledby="experiments-title"><div class="experiment-heading"><h2 id="experiments-title">Open experiments</h2><span>SMALL INTERACTIVE PROTOTYPES</span></div>
+  <div class="experiment-grid">
+    <article class="experiment experiment-walk"><div class="experiment-meta"><span>NO. 001 / RANDOMNESS</span><span class="lab-status"><i></i> INTERACTIVE</span></div><div class="experiment-demo"><canvas id="walk-canvas" aria-label="Random walk visualization" role="img"></canvas><div class="walk-overlay">random<br><em>walk</em><span>↓ PRESS RUN</span></div></div><div class="experiment-info"><div><h3>The wandering point</h3><p>One point. No destination. See where chance takes it.</p></div><div class="experiment-actions"><button type="button" id="walk-run" class="lab-button">Run / Pause <span>↗</span></button><button type="button" id="walk-reset" class="lab-button ghost-button">Reset ↺</button></div></div></article>
+    <article class="experiment experiment-gridlab"><div class="experiment-meta"><span>NO. 002 / PATTERNS</span><span class="lab-status"><i></i> INTERACTIVE</span></div><div class="experiment-demo"><div class="pattern-grid" id="pattern-grid" role="group" aria-label="Interactive 8 by 8 color pattern, click a square to change it"></div><span class="pattern-doodle">click<br>the dots <span>↗</span></span></div><div class="experiment-info"><div><h3>The little pattern machine</h3><p>Tap a square. Shuffle the colors. See what shows up.</p></div><div class="experiment-actions"><button type="button" id="pattern-shuffle" class="lab-button">Shuffle <span>⤨</span></button><button type="button" id="pattern-clear" class="lab-button ghost-button">Clear ↺</button></div></div></article>
+  </div><div class="lab-footnote">✳ &nbsp; THESE ARE SMALL LIVE WEB EXPERIMENTS, NOT CLAIMS ABOUT FINISHED PROJECTS. MORE MAY FIND THEIR WAY HERE.</div>
+</section>

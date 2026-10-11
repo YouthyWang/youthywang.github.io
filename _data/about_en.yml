@@ -1,0 +1,71 @@
+# English About page content. Edit wording here; do not change the key names.
+page_title: Youthy WANG — a personal corner
+navigation:
+  about: about
+  blog: blog
+  vibe: vibe coding
+  wordmark_label: YW — home
+  language_label: Choose language
+  skip: Skip to content
+hero:
+  eyebrow: A PERSONAL CORNER
+  eyebrow_sub: — AN OPEN NOTEBOOK ON THE INTERNET
+  name: Youthy WANG
+  intro_label: A LITTLE ABOUT ME
+  intro: A few lines about my work and interests will live here. For now, this is a space for ideas, notes,
+    and things worth exploring.
+  social_label: CONNECT / FIND ME
+  portrait_accessible_name: Portrait
+social:
+  email: Email
+  github: GitHub
+  twitter: X / Twitter
+  zhihu: Zhihu
+  linkedin: LinkedIn
+  orcid: ORCID
+  orcid_pending: ORCID — add your profile URL
+  cv: CV
+  cv_title: Curriculum vitae
+research:
+  rail: 01 / RESEARCH & QUESTIONS
+  overline: WHAT I THINK ABOUT
+  title: Research Interests
+  aside:
+    - An open space for research questions
+    - that are still taking shape.
+  topics:
+    - Causal inference
+    - Decision Making
+    - Optimization
+publications:
+  rail: 02 / SCHOLARLY WORK
+  overline: RESEARCH RECORD
+  title: Selected Publications & Preprints
+  aside:
+    - A curated space for published and
+    - publicly available work.
+  index: PUBLICATION INDEX
+  placeholder_title: Space reserved for selected work.
+  placeholder_details: Titles, authors, venues & links will live here once ready.
+explore:
+  rail: 03 / BEYOND THE DESK
+  overline: A FEW THINGS OUTSIDE THE PAPER
+  title: Notes & Experiments
+  blog:
+    index: 01 / RESEARCH & LIFE
+    first_line: the
+    second_line: blog.
+    description: Notes at the intersection of research, writing, and everyday life.
+    cta: OPEN THE NOTEBOOK
+  vibe:
+    index: 02 / LEARNING BY MAKING
+    first_line: vibe
+    second_line: coding.
+    description: Small experiments from an AI coding learner, one idea at a time.
+    cta: EXPLORE THE LAB
+  whisper: QUESTIONS   ✳   METHODS   ✳   CREATIVE DETOURS   ✳   STILL LEARNING
+footer:
+  greeting: A few thoughts, collected along the way
+  back_top: back to top ↑
+  name: Youthy WANG
+  coordinate: ANTARCTICA / THE INTERNET

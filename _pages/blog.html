@@ -1,0 +1,17 @@
+---
+layout: studio
+permalink: /blog/
+title: The blog
+nav: blog
+---
+<section class="inner-intro blog-intro"><div class="eyebrow"><span class="tiny-square"></span> RESEARCH, LIFE & NOTES / 02</div><div class="inner-title-grid"><h1>The Blog</h1><div class="intro-side"><p>Research reflections and everyday notes — an evolving collection of work, reading, and life outside the office.</p></div></div></section>
+<section class="journal" aria-labelledby="journal-heading"><div class="journal-heading"><h2 id="journal-heading">The notebook<span class="count-label">{{ site.posts.size | plus: 1 }}</span></h2><label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="post-search" placeholder="Find a thought..." aria-label="Search blog posts"></label></div><div class="post-list" id="post-list">
+  {% for post in site.posts %}
+  <a class="post-entry" href="{{ post.url | relative_url }}" data-post-title="{{ post.title | escape }}" data-post-year="{{ post.date | date: '%Y' }}"><div class="post-date" data-date-iso="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</div><div class="post-center"><span class="post-type">FIELD NOTE / {{ post.date | date: '%Y' }}</span><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | truncate: 138 }}</p></div><span class="post-chevron" aria-hidden="true">↗</span></a>
+  {% endfor %}
+  <a class="post-entry coursework-entry" href="{{ '/archive/' | relative_url }}" data-post-title="Coursework Notes" data-post-year="archive">
+    <div class="post-date">THE BACK SHELF</div>
+    <div class="post-center"><span class="post-type">ARCHIVE / AN OLDER CHAPTER</span><h3>Coursework Notes <span class="coursework-symbol">✳</span></h3><p>Undergraduate course notes, tucked away from the main menu. A quiet little archive, if you happen to look here.</p></div>
+    <span class="post-chevron" aria-hidden="true">↗</span>
+  </a>
+</div><p class="no-results" id="no-results" hidden>No matching notes. Try another thought?</p><div class="journal-end"><span>END OF THE NOTEBOOK (FOR NOW)</span><span>✳</span></div></section>
